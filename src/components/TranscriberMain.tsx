@@ -181,13 +181,13 @@ export default function TranscriberMain() {
               onClick={async () => {
                 try {
                   if (!client) throw "AssemblyAI client not exist";
-                  if (!audioFile) throw "audio file not exist";
                   setProcess("processing");
                   setPlaying(false);
                   audioRef.current?.pause();
                   clearInterval(audioInterval);
                   let url;
                   if (currentAudioType == "file") {
+                    if (!audioFile) throw "audio file not exist";
                     const arr = await audioFile.arrayBuffer();
                     const buffer = Buffer.from(arr);
                     const input = {
