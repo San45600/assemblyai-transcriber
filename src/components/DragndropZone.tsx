@@ -84,8 +84,8 @@ export function DragndropZone({
               file.name
             ) : (
               <>
-                <MdAudioFile size={24} />
-                <div className="line-clamp-1">
+                <MdAudioFile size={24} className="hidden sm:block" />
+                <div className="line-clamp-1 sm:text-base text-xs">
                   Drag or paste, or click here to select file.
                 </div>
               </>
